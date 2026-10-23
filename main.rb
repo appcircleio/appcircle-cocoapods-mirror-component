@@ -98,7 +98,7 @@ if mirror.nil?
 end
 abort_with1('AC_MIRROR_COCOAPODS must be an http or https URL.') unless mirror.match?(%r{\Ahttps?://[^\s'"]+\z})
 mirror += '/' unless mirror.end_with?('/')
-mode = (get_env_variable('AC_MIRROR_COCOAPODS_PODFILE') || 'fail').downcase
+mode = (get_env_variable('AC_MIRROR_COCOAPODS_PODFILE') || 'update').downcase
 abort_with1("AC_MIRROR_COCOAPODS_PODFILE must be one of #{PODFILE_MODES.join(', ')}.") unless PODFILE_MODES.include?(mode)
 
 env_file = get_env_variable('AC_ENV_FILE_PATH')
